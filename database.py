@@ -28,3 +28,15 @@ class Database:
         with open(path, "rb") as file:
             self.data = pickle.load(file)
 
+    # def add_profile(self, name):
+    #     # self.data.append(prof)
+    #     # profile = Profile(name)
+    #     self.data[name] = Profile(name)
+
+    # def add_img(self, name, desc):
+    #     if name not in self.data:
+    #         self.add_profile(name)
+    #     profile = self.data[name]
+    #     profile.add_desc(desc)
+    #     self.data[name] = profile
+
