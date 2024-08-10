@@ -21,3 +21,9 @@ def distance(x, y):
     output = 1 - (x_norm @ y_norm.T)
 
     return output
+
+def get_detection_boxes(img_array: np.ndarray):
+    detection_boxes, probs, _ = facenet.detect(img_array)
+    retained_detection = probs >= 0.95
+    detection_box = detection_boxes[retained_detection]
+    return detection_box
