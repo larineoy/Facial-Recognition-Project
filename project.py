@@ -14,3 +14,10 @@ class Profile:
         else:
             raise ValueError("No descriptors available.")
 
+    def add_desc(self, desc: np.ndarray):
+        if self.desc is None:
+            if desc.ndim == 1:
+                desc = desc[np.newaxis, :]
+            self.desc = desc
+        else:
+            self.desc = np.vstack([self.desc, desc])
