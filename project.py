@@ -21,3 +21,7 @@ class Profile:
             self.desc = desc
         else:
             self.desc = np.vstack([self.desc, desc])
+
+    def __repr__(self) -> str:
+        num_images = 0 if self.desc is None else len(self.desc)
+        return f"Profile: {self.name} with {num_images} images."
